@@ -1,9 +1,8 @@
-# dsapi-ui
-the frontend for [datasets.at](http://datasets.at/)
+# imgapi-ui
 
-dsapi-ui provides human readable dataset / image listings with search and filter functions plus a (hopefully simple) builder for JSON files to be used with vmadm on [SmartOS](http://smartos.org/)
-
-The complete UI is build client side and needs no special server side technology. But you'll need an dsapi server or at least a JSON file with dataset listing to use the UI. By default this listing should be accessible at `/datasets`.
+This a webfrontend based on the [datasets.at](http://datasets.at) frontend but
+I've changed some stuff to support the
+[sdc-imgapi](https://github.com/joyent/sdc-imgapi).
 
 ## projects used
 - [Brunch](http://brunch.io/)
@@ -15,7 +14,7 @@ The complete UI is build client side and needs no special server side technology
 1. install brunch `npm install -g brunch` (you'll need to have nodejs and npm already installed)
 2. install development dependencies with `npm install`
 3. build the project with `brunch build`
-4. upload everything in `_public/` to your destination server
+4. upload everything in `public/` to your destination server
 
 to do quick changes and test locally you can use the included web-server
 
@@ -24,6 +23,3 @@ to do quick changes and test locally you can use the included web-server
 3. open [the development version](http://localhost:8000/_public/index.html) in your browser
 
 a `/datasets` file is already included so that all basic functions should be usable
-
-## what if you did patches that need to be included?
-**fork!** - and send pull requests
