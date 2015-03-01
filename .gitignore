@@ -11,3 +11,4 @@ build.xml
 node_modules
 logs
 _public
+public
