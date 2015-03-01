@@ -23,7 +23,7 @@ angular.module('dsapi.services', [], ['$provide', function($provide) {
     };
 
     /* initialize datasets list */
-    $http.get('/api/datasets')
+    $http.get('/images')
       .success(function(data) {
         datasets.pushMany(data);
 
@@ -32,7 +32,7 @@ angular.module('dsapi.services', [], ['$provide', function($provide) {
       })
       .error(function(data, status, headers, config) {
         if (status == 404) {
-          $http.get('/datasets')
+          $http.get('/images')
           .success(function(data) {
             datasets.pushMany(data);
 
