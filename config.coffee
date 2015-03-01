@@ -3,7 +3,7 @@ exports.config =
     definitions: false
     wrapper: false
   paths:
-    public: '_public'
+    public: 'public'
   files:
     javascripts:
       joinTo:
