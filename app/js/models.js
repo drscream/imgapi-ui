@@ -117,7 +117,7 @@ function Dataset(data) {
     this.mdata_value = this.tags['mdata:' + this.mdata[i] + ':value']
     this.mdata_description = this.tags['mdata:' + this.mdata[i] + ':description']
 
-    if (!this.tags['mdata:' + this.mdata[i] + ':group') {
+    if (!this.tags['mdata:' + this.mdata[i] + ':group']) {
       this.mdata_group = 'custom';
     }
 
