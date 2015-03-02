@@ -513,7 +513,7 @@
 				<tr>
 					<th class="col-sm-3">Name</th>
 					<th class="col-sm-5">Value</th>
-					<th class="col-sm-2">type</th>
+					<th class="col-sm-2">Group</th>
 					<th class="col-sm-2"></th>
 				</tr>
 			</thead>
@@ -522,10 +522,10 @@
 					<td>{{md.title}}</td>
 					<td>{{md.value | shorten:48}}</td>
 					<td ng-switch on="md.group">
-						<span ng-switch-when="password" class="label label-important">password</span>
+						<span ng-switch-when="password" class="label label-danger">password</span>
 						<span ng-switch-when="string" class="label label-success">string</span>
 						<span ng-switch-when="custom" class="label label-warning">custom</span>
-						<span ng-switch-default class="label label-info">{{md.type}}</span>
+						<span ng-switch-default class="label label-info">default</span>
 					</td>
 					<td>
 						<div class="pull-right">

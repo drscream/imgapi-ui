@@ -112,22 +112,17 @@ function Dataset(data) {
   for (var i = 0; i < this.mdata.length; i++) {
     console.log(this.tags['mdata:' + this.mdata[i]]);
 
-    this.mdata_name  = this.mdata[i]
-    this.mdata_type  = this.tags['mdata:' + this.mdata[i] + ':type']
-    this.mdata_value = this.tags['mdata:' + this.mdata[i] + ':value']
-    this.mdata_description = this.tags['mdata:' + this.mdata[i] + ':description']
-
-    if (!this.tags['mdata:' + this.mdata[i] + ':group']) {
-      this.mdata_group = 'custom';
-    }
+    this.mdata_name  = this.mdata[i];
+    this.mdata_type  = this.tags['mdata:' + this.mdata[i] + ':type']  || '';
+    this.mdata_description = this.tags['mdata:' + this.mdata[i] + ':description'] || '';
+    this.mdata_group = this.tags['mdata:' + this.mdata[i] + ':group'] || 'custom';
 
     this.metadata.push(new MetadataOption({
       'group': this.mdata_group,
       'name': this.mdata_name,
       'title': this.mdata_name,
       'description': this.mdata_description,
-      'type': this.mdata_type,
-      'value': this.mdata_value
+      'type': this.mdata_type
     }));
   }
 

@@ -35,7 +35,8 @@
       "license": "gpl",
       "mdata": "root_authorized_keys munin_master_allow syslog_host",
       "mdata:root_authorized_keys:type": "text",
-      "mdata:root_authorized_keys:value": "abc",
+      "mdata:root_authorized_keys:description": "hansi ist toll",
+      "mdata:root_authorized_keys:group": "security",
       "mdata:munin_master_allow:type": "bool"
     },
     "channels": [
