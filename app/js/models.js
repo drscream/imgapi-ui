@@ -94,7 +94,8 @@ function Dataset(data) {
     'homepage',
     'uuid',
     'published_at',
-    'stats_info'
+    'stats_info',
+    'channels'
   ];
 
   for (i in proxy_attrs) {
@@ -179,6 +180,9 @@ function Dataset(data) {
       this.metadata.push(new MetadataOption(options));
     }
   }
+}
+
+function ChannelList(data) {
 }
 
 function DatasetList() {
