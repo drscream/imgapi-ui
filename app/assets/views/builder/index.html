@@ -523,9 +523,9 @@
 					<td>{{md.value | shorten:48}}</td>
 					<td ng-switch on="md.group">
 						<span ng-switch-when="password" class="label label-danger">password</span>
-						<span ng-switch-when="string" class="label label-success">string</span>
 						<span ng-switch-when="custom" class="label label-warning">custom</span>
-						<span ng-switch-default class="label label-info">default</span>
+						<span ng-switch-when="" class="label label-info">default</span>
+						<span ng-switch-default class="label label-primary">{{md.group}}</span>
 					</td>
 					<td>
 						<div class="pull-right">
