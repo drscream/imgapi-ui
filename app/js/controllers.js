@@ -3,6 +3,8 @@
 function HomeCtrl($scope, $routeParams, $location, dsapiDatasets) {
   $scope.datasets = null;
   $scope.latest = null;
+  $scope.protocol = $location.protocol();
+  $scope.hostname = $location.host();
 
   if ($routeParams.query) {
     $scope.query = $routeParams.query;
