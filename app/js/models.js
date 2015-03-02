@@ -95,7 +95,8 @@ function Dataset(data) {
     'uuid',
     'published_at',
     'stats_info',
-    'channels'
+    'channels',
+    'tags'
   ];
 
   for (i in proxy_attrs) {
@@ -104,6 +105,31 @@ function Dataset(data) {
 
   /* parse date data */
   this.published_at = Date.parse(this.published_at);
+
+  /* get tags based on metadata list */
+  this.mdata = this.tags['mdata'].split(" ");
+
+  for (var i = 0; i < this.mdata.length; i++) {
+    console.log(this.tags['mdata:' + this.mdata[i]]);
+
+    this.mdata_name  = this.mdata[i]
+    this.mdata_type  = this.tags['mdata:' + this.mdata[i] + ':type']
+    this.mdata_value = this.tags['mdata:' + this.mdata[i] + ':value']
+    this.mdata_description = this.tags['mdata:' + this.mdata[i] + ':description']
+
+    if (!this.tags['mdata:' + this.mdata[i] + ':group') {
+      this.mdata_group = 'custom';
+    }
+
+    this.metadata.push(new MetadataOption({
+      'group': this.mdata_group,
+      'name': this.mdata_name,
+      'title': this.mdata_name,
+      'description': this.mdata_description,
+      'type': this.mdata_type,
+      'value': this.mdata_value
+    }));
+  }
 
   /* determine usable metadata and populate metadata list */
   this.metadata.push(new MetadataOption({
@@ -167,22 +193,6 @@ function Dataset(data) {
     }
   }
 
-  if (this.manifest.hasOwnProperty('metadata_info')) {
-    var options;
-
-    for (i in this.manifest.metadata_info) {
-      options = this.manifest.metadata_info[i];
-
-      if (!options.hasOwnProperty('group')) {
-        options['group'] = 'custom';
-      }
-
-      this.metadata.push(new MetadataOption(options));
-    }
-  }
-}
-
-function ChannelList(data) {
 }
 
 function DatasetList() {

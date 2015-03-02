@@ -1,0 +1,45 @@
+[
+  {
+    "v": 2,
+    "uuid": "eaab6588-2e94-4c10-b228-40e8c99bec45",
+    "owner": "00000000-0000-0000-0000-000000000000",
+    "name": "core-base",
+    "version": "14.3.0",
+    "state": "active",
+    "disabled": false,
+    "public": true,
+    "published_at": "2015-03-02T10:14:09.787Z",
+    "type": "zone-dataset",
+    "os": "smartos",
+    "files": [
+      {
+        "sha1": "99c0c6d99b538014525516aa292857c35aab0546",
+        "size": 142347905,
+        "compression": "gzip"
+      }
+    ],
+    "description": "blabla",
+    "homepage": "http://google.de",
+    "requirements": {
+      "networks": [
+        {
+          "name": "net0",
+          "description": "public"
+        }
+      ],
+      "min_platform": {
+        "7.0": "20141230T180824Z"
+      }
+    },
+    "tags": {
+      "license": "gpl",
+      "mdata": "root_authorized_keys munin_master_allow syslog_host",
+      "mdata:root_authorized_keys:type": "text",
+      "mdata:root_authorized_keys:value": "abc",
+      "mdata:munin_master_allow:type": "bool"
+    },
+    "channels": [
+      "dev"
+    ]
+  }
+]
