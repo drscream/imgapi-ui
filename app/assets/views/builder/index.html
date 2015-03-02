@@ -1,7 +1,5 @@
 <div class="well well-sm">
-	<a href="/api/export/{{dataset.uuid}}" class="pull-right" title="export as tar-archive">
-		<span class="glyphicon glyphicon-cloud-download"></span>
-	</a>
+	<img class="pull-right" ng-if="dataset.icon == true" src="/images/{{ dataset.uuid }}/icon"/>
 
 	<dl class="dl-horizontal">
 		<dt>Name:</dt>
@@ -13,7 +11,7 @@
 		<dt>Published:</dt>
 		<dd date-from-now="dataset.published_at">{{dataset.published_at}}</dd>
 		<dt>Download-Size:</dt>
-		<dd>{{dataset.getDownloadSize()}}</dd>
+		<dd>{{dataset.getDownloadSize()}} <a href="/images/{{dataset.uuid}}/file" title="export as tar-archive"><span class="glyphicon glyphicon-cloud-download"></span></a></dd>
 		<dt ng-show="dataset.stats_info['downloaded']">Snatched:</dt>
 		<dd ng-show="dataset.stats_info['downloaded']">{{dataset.stats_info['downloaded']}} times</dd>
 		<dt ng-show="dataset.homepage">Homepage:</dt>

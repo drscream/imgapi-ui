@@ -91,6 +91,7 @@ function Dataset(data) {
     'version',
     'os',
     'description',
+    'icon',
     'homepage',
     'uuid',
     'published_at',
