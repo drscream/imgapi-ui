@@ -43,12 +43,12 @@ angular.module('dsapi.filters', [])
         kv = parts[i].match(/^(\w+):(.+)$/);
 
         if (kv && filterableKeys.indexOf(kv[1]) >= 0) {
-          if (manifest[kv[1]].toLowerCase().indexOf(kv[2].toLowerCase()) === 0) {
+          if (manifest[kv[1]] != undefined && manifest[kv[1]].toLowerCase().indexOf(kv[2].toLowerCase()) === 0) {
             match = true;
           }
         } else {
           for (k in searchableKeys) {
-            if (manifest[searchableKeys[k]].toLowerCase().search(parts[i]) >= 0) {
+            if (manifest[searchableKeys[k]] != undefined && manifest[searchableKeys[k]].toLowerCase().search(parts[i]) >= 0) {
               match = true;
             }
           }
