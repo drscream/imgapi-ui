@@ -108,23 +108,26 @@ function Dataset(data) {
   this.published_at = Date.parse(this.published_at);
 
   /* get tags based on metadata list */
-  this.mdata = this.tags['mdata'].split(" ");
+  if(this.tags != undefined) {
+    console.log(this.tags)
+    this.mdata = this.tags['mdata'].split(" ");
 
-  for (var i = 0; i < this.mdata.length; i++) {
-    console.log(this.tags['mdata:' + this.mdata[i]]);
+    for (var i = 0; i < this.mdata.length; i++) {
+      console.log(this.tags['mdata:' + this.mdata[i]]);
 
-    this.mdata_name  = this.mdata[i];
-    this.mdata_type  = this.tags['mdata:' + this.mdata[i] + ':type']  || '';
-    this.mdata_description = this.tags['mdata:' + this.mdata[i] + ':description'] || '';
-    this.mdata_group = this.tags['mdata:' + this.mdata[i] + ':group'] || 'custom';
+      this.mdata_name  = this.mdata[i];
+      this.mdata_type  = this.tags['mdata:' + this.mdata[i] + ':type']  || '';
+      this.mdata_description = this.tags['mdata:' + this.mdata[i] + ':description'] || '';
+      this.mdata_group = this.tags['mdata:' + this.mdata[i] + ':group'] || 'custom';
 
-    this.metadata.push(new MetadataOption({
-      'group': this.mdata_group,
-      'name': this.mdata_name,
-      'title': this.mdata_name,
-      'description': this.mdata_description,
-      'type': this.mdata_type
-    }));
+      this.metadata.push(new MetadataOption({
+        'group': this.mdata_group,
+        'name': this.mdata_name,
+        'title': this.mdata_name,
+        'description': this.mdata_description,
+        'type': this.mdata_type
+      }));
+    }
   }
 
   /* determine usable metadata and populate metadata list */

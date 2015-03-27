@@ -23,7 +23,7 @@ angular.module('dsapi.services', [], ['$provide', function($provide) {
     };
 
     /* initialize datasets list */
-    $http.get('/images', { headers: { 'Accept-Version': '*' } })
+    $http.get('/images?sort=published_at.desc', { headers: { 'Accept-Version': '*' } })
       .success(function(data) {
         datasets.pushMany(data);
 
@@ -32,7 +32,7 @@ angular.module('dsapi.services', [], ['$provide', function($provide) {
       })
       .error(function(data, status, headers, config) {
         if (status == 404) {
-          $http.get('/images', { headers: { 'Accept-Version': '*' } })
+          $http.get('/images?sort=published_at.desc', { headers: { 'Accept-Version': '*' } })
           .success(function(data) {
             datasets.pushMany(data);
 
