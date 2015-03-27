@@ -17,7 +17,9 @@
 		<dt ng-show="dataset.homepage">Homepage:</dt>
 		<dd ng-show="dataset.homepage"><a href="{{dataset.homepage}}" target="_blank">{{dataset.homepage}}</a></dd>
 		<dt ng-show="dataset.channels">Channels:</dt>
-		<dd ng-show="dataset.channels"><span class="label label-default channels" ng-repeat="(key, value) in dataset.channels">{{value}}</span> </dd>
+		<dd ng-show="dataset.channels">
+			<span class="label label-success channels" ng-repeat="(key, value) in dataset.channels" ng-if="value == 'release'"> {{value}} </span><span class="label label-default channels" ng-repeat="(key, value) in dataset.channels" ng-if="value != 'release'"> {{value}} </span>
+		</dd>
 	</dl>
 </div>
 
