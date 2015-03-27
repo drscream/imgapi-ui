@@ -108,8 +108,7 @@ function Dataset(data) {
   this.published_at = Date.parse(this.published_at);
 
   /* get tags based on metadata list */
-  if(this.tags != undefined) {
-    console.log(this.tags)
+  if(this.tags != undefined && this.tags['customer_metadata_keys']) {
     this.mdata = this.tags['customer_metadata_keys'].split(" ");
 
     for (var i = 0; i < this.mdata.length; i++) {

@@ -18,9 +18,6 @@
 		<dd ng-show="dataset.homepage"><a href="{{dataset.homepage}}" target="_blank">{{dataset.homepage}}</a></dd>
 		<dt ng-show="dataset.channels">Channels:</dt>
 		<dd ng-show="dataset.channels"><span class="label label-default channels" ng-repeat="(key, value) in dataset.channels">{{value}}</span> </dd>
-
-		<dt ng-show="dataset.tags" ng-repeat="(key, value) in dataset.tags">{{key}}</dt>
-		<dd ng-show="dataset.tags" ng-repeat="(key, value) in dataset.tags">{{value}}</dd>
 	</dl>
 </div>
 
