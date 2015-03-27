@@ -110,18 +110,15 @@ function Dataset(data) {
   /* get tags based on metadata list */
   if(this.tags != undefined) {
     console.log(this.tags)
-    this.mdata = this.tags['mdata'].split(" ");
+    this.mdata = this.tags['customer_metadata_keys'].split(" ");
 
     for (var i = 0; i < this.mdata.length; i++) {
-      console.log(this.tags['mdata:' + this.mdata[i]]);
-
       this.mdata_name  = this.mdata[i];
-      this.mdata_type  = this.tags['mdata:' + this.mdata[i] + ':type']  || '';
-      this.mdata_description = this.tags['mdata:' + this.mdata[i] + ':description'] || '';
-      this.mdata_group = this.tags['mdata:' + this.mdata[i] + ':group'] || 'custom';
+      this.mdata_type  = this.tags['customer_metadata_type:' + this.mdata[i]]  || '';
+      this.mdata_description = this.tags['customer_metadata_description:' + this.mdata[i]] || '';
 
       this.metadata.push(new MetadataOption({
-        'group': this.mdata_group,
+        'group': 'custom',
         'name': this.mdata_name,
         'title': this.mdata_name,
         'description': this.mdata_description,
